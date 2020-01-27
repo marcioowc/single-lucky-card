@@ -1,0 +1,74 @@
+<mat-horizontal-stepper linear labelPosition="bottom" #stepper>
+    <mat-step [stepControl]="firstFormGroup" errorMessage="Informações São Obrigatórias!">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Dados Pessoais</ng-template>
+        <div  mat-dialog-content fxLayout="column" fxLayoutAlign="space-around stretch" >
+            <mat-form-field>
+            <input matInput placeholder="Nome" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="E-mail" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Telefone" formControlName="firstCtrl" required>
+            </mat-form-field>
+        </div>
+        <div>
+          <button mat-button color="primary" matStepperNext>Próximo
+              <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Números</ng-template>
+
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <mat-list >
+                <mat-list-item>
+                    <button mat-fab color="primary" style="margin: 20px;">1</button>
+                    <button mat-fab color="primary" style="margin: 20px;">2</button>
+                    <button mat-fab color="primary" style="margin: 20px;">3</button>
+                    <button mat-fab color="primary" style="margin: 20px;">4</button>
+                    <button mat-fab color="warn" style="margin: 20px;">5</button>
+                </mat-list-item>
+                <mat-list-item style="margin-top: 20px;" >
+                    <button mat-fab color="warn" style="margin: 20px;">7</button>
+                    <button mat-fab color="primary" style="margin: 20px;">8</button>
+                    <button mat-fab color="warn" style="margin: 20px;">8</button>
+                    <button mat-fab color="primary" style="margin: 20px;">9</button>
+                    <button mat-fab color="primary" style="margin: 20px;">10</button>
+                </mat-list-item>
+            </mat-list>
+        </div>
+        
+        <div>
+          <button mat-button matStepperPrevious color="warn">
+              Voltar
+              <mat-icon>arrow_back</mat-icon>
+          </button>
+          <button mat-button matStepperNext color="primary">
+              <mat-icon>arrow_forward</mat-icon>
+              Próximo
+           </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Confirmação</ng-template>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        Confirmação
+      </div>
+      <div>
+        <button mat-button matStepperPrevious color="warn">
+            Voltar
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <button mat-button (click)="stepper.reset()" color="primary">
+            <mat-icon>done</mat-icon>
+            Confirmar
+        </button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
