@@ -8,6 +8,21 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
+/* Custom Hammer configuration */
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import * as Hammer from 'hammerjs';
+
+export class CustomHammerConfig extends HammerGestureConfig {
+  overrides = {
+    'pan': {
+      direction: Hammer.DIRECTION_ALL,
+    }
+  }
+}
+/* End Custom hammer configuration */
+
+import { NgxGalleryModule } from 'ngx-gallery';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,9 +33,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxGalleryModule
   ],
-  providers: [],
+  providers: [
+    {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
