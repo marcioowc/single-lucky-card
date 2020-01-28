@@ -17,6 +17,9 @@ export class RaffleDetailComponent implements OnInit {
 
   color: string="primary";
 
+  myModel: any;
+  datemask = ['(', /\d/,/\d/, ')', ' ', /\d/, ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/,];
+
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {   

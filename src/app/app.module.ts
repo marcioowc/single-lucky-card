@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TextMaskModule } from 'angular2-text-mask';
 
 /* Custom Hammer configuration */
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
@@ -34,7 +35,8 @@ import { NgxGalleryModule } from 'ngx-gallery';
     MaterialModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    TextMaskModule
   ],
   providers: [
     {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}

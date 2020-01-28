@@ -6,6 +6,7 @@ import { RaffleDetailComponent } from './raffle-detail/raffle-detail.component';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TextMaskModule } from 'angular2-text-mask';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RaffleRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule    
+    ReactiveFormsModule,
+    TextMaskModule  
   ]
 })
 export class RaffleModule { }

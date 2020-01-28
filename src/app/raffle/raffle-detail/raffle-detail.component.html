@@ -6,7 +6,7 @@
       <div fxLayout="column" fxLayoutAlign="center center">
 
         <mat-chip-list aria-label="Fish selection">          
-          <mat-chip color="primary" selected>Disponníeveis (14)</mat-chip>
+          <mat-chip color="primary" selected>Disponíveis (14)</mat-chip>
           <mat-chip color="warn" selected>Reservados (5)</mat-chip>
           <mat-chip disabled selected>Indisponíveis (1)</mat-chip>
         </mat-chip-list>
@@ -51,13 +51,13 @@
         <ng-template matStepLabel>Dados Pessoais</ng-template>
         <div  mat-dialog-content fxLayout="column" fxLayoutAlign="space-around stretch" >
             <mat-form-field>
-            <input matInput placeholder="Nome" formControlName="firstCtrl" required>
+            <input matInput placeholder="Nome" formControlName="firstCtrl" required autocomplete="off">
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="E-mail" formControlName="firstCtrl" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Telefone" formControlName="firstCtrl" required>
+                <input matInput placeholder="Telefone" formControlName="firstCtrl" required [textMask]="{mask: datemask}" [(ngModel)]="myModel">
             </mat-form-field>
         </div>
         <div>
@@ -91,6 +91,12 @@
       </div>
     </mat-step>
   </mat-horizontal-stepper>
+
+  <br><br>
+
+  <mat-divider></mat-divider>
+
+  <br><br>
 
   <mat-tab-group>
     <mat-tab>
