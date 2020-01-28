@@ -15,6 +15,8 @@ export class RaffleDetailComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
+  color: string="primary";
+
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {   
@@ -28,6 +30,16 @@ export class RaffleDetailComponent implements OnInit {
 
   ngAfterViewInit(): void {
     
+  }
+
+  onClick(event){
+    if(this.color == "primary"){
+      this.color = "accent";
+    }else{
+      this.color = "primary";
+    }
+
+    console.log(event.target.textContent);
   }
 
 }
